@@ -1,16 +1,15 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import Header from './components/header';
-import Home from './screens/home';
+import { StatusBar, View } from 'react-native';
+import StackNavigation from './components/stackNavigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
     return (
-        <View>
+        <NavigationContainer>
             <StatusBar
                 backgroundColor="#000"
                 barStyle="light-content"
             />
-            <Header text="Aplikacja bankowa" />
-            <Home />
-        </View>
+            <StackNavigation />
+        </NavigationContainer>
     );
 }

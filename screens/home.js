@@ -2,15 +2,21 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-export default Home = () => {
+export default Home = ({ navigation }) => {
+    const goToLogin = () => {
+        navigation.navigate('Login');
+    }
+
     return (
-        <View style={styles.container}>
-            <FontAwesome name="bank" style={styles.icon} />
-            <Text style={styles.text}>Witaj w naszej aplikacji</Text>
-            <Text style={styles}>Zaloguj się aby kontynuować</Text>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Zaloguj się</Text>
-            </TouchableOpacity>
+        <View>
+            <View style={styles.container}>
+                <FontAwesome name="bank" style={styles.icon} />
+                <Text style={styles.text}>Witaj w naszej aplikacji</Text>
+                <Text>Zaloguj się aby kontynuować</Text>
+                <TouchableOpacity style={styles.button} onPress={goToLogin}>
+                    <Text style={styles.buttonText}>Zaloguj się</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }

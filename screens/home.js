@@ -3,9 +3,9 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 export default Home = ({ navigation }) => {
-    const goToLogin = () => {
-        navigation.navigate('Login');
-    }
+
+    const login = () => navigation.navigate('Login');
+
 
     return (
         <View>
@@ -13,7 +13,7 @@ export default Home = ({ navigation }) => {
                 <FontAwesome name="bank" style={styles.icon} />
                 <Text style={styles.text}>Witaj w naszej aplikacji</Text>
                 <Text>Zaloguj się aby kontynuować</Text>
-                <TouchableOpacity style={styles.button} onPress={goToLogin}>
+                <TouchableOpacity style={styles.button} onPress={login}>
                     <Text style={styles.buttonText}>Zaloguj się</Text>
                 </TouchableOpacity>
             </View>

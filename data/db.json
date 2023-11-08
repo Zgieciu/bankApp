@@ -1,0 +1,39 @@
+{
+    "accounts": [
+        {
+            "id": 1,
+            "login": "1111",
+            "password": "1111",
+            "movements": [
+                200,
+                500,
+                1200,
+                -250,
+                100,
+                -500
+            ],
+            "cardId": 1
+        },
+        {
+            "id": 2,
+            "login": "2222",
+            "password": "2222",
+            "movements": [
+                2000,
+                300,
+                -500
+            ],
+            "cardId": 2
+        }
+    ],
+    "creditCards": [
+        {
+            "id": 1,
+            "cardNumber": 3456123567892051
+        },
+        {
+            "id": 2,
+            "cardNumber": 3925069482611613
+        }
+    ]
+}

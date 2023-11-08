@@ -10,7 +10,6 @@ export default function App() {
 
   useEffect(() => {
     getAccounts(setAccounts);
-    console.log(account);
   }, [])
 
   return (

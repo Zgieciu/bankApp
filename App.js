@@ -6,19 +6,20 @@ import getAccounts from './data/accounts';
 
 export default function App() {
 
-    const [accounts, setAccounts] = useState([]);
+  const [accounts, setAccounts] = useState([]);
 
-    useEffect(() => {
-        getAccounts(setAccounts);
-    }, [])
+  useEffect(() => {
+    getAccounts(setAccounts);
+    console.log(account);
+  }, [])
 
-    return (
-        <NavigationContainer>
-            <StatusBar
-                backgroundColor="#000"
-                barStyle="light-content"
-            />
-            <StackNavigation />
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <StatusBar
+        backgroundColor="#000"
+        barStyle="light-content"
+      />
+      <StackNavigation />
+    </NavigationContainer>
+  );
 }

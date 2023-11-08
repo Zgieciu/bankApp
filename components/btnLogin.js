@@ -10,15 +10,17 @@ export default BtnLogin = ({ btnFunction }) => {
 }
 
 const styles = StyleSheet.create({
-    text: {
-        marginTop: 80,
-        fontSize: 20,
-    },
     button: {
         marginTop: 20,
         padding: 10,
         borderColor: '#000',
         borderWidth: 2,
         backgroundColor: 'darkblue',
+    },
+    buttonText: {
+        fontWeight: 'bold',
+        fontSize: 25,
+        textTransform: 'uppercase',
+        color: '#fff',
     },
 })

@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import BtnLogin from '../components/btnLogin';
 
 export default Home = ({ navigation }) => {
 
@@ -13,9 +14,7 @@ export default Home = ({ navigation }) => {
                 <FontAwesome name="bank" style={styles.icon} />
                 <Text style={styles.text}>Witaj w naszej aplikacji</Text>
                 <Text>Zaloguj się aby kontynuować</Text>
-                <TouchableOpacity style={styles.button} onPress={login}>
-                    <Text style={styles.buttonText}>Zaloguj się</Text>
-                </TouchableOpacity>
+                <BtnLogin btnFunction={login} />
             </View>
         </View>
     );
@@ -34,18 +33,5 @@ const styles = StyleSheet.create({
     text: {
         marginTop: 80,
         fontSize: 20,
-    },
-    button: {
-        marginTop: 20,
-        padding: 10,
-        borderColor: '#000',
-        borderWidth: 2,
-        backgroundColor: 'darkblue',
-    },
-    buttonText: {
-        fontWeight: 'bold',
-        fontSize: 25,
-        textTransform: 'uppercase',
-        color: '#fff',
     },
 })

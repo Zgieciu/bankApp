@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import BtnLogin from '../components/btnLogin';
 
 export default Login = ({ navigation }) => {
 
@@ -10,9 +11,7 @@ export default Login = ({ navigation }) => {
             <Text style={styles.text}>Okno logowania</Text>
             <TextInput style={styles.input} placeholder='Login' />
             <TextInput style={styles.input} placeholder='Hasło' />
-            <TouchableOpacity style={styles.button} onPress={goToAccount}>
-                <Text style={styles.buttonText}>Zaloguj się</Text>
-            </TouchableOpacity>
+            <BtnLogin btnFunction={goToAccount} />
         </View>
     )
 }
@@ -35,18 +34,5 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         borderWidth: 2,
         borderColor: '#000',
-    },
-    button: {
-        marginTop: 20,
-        padding: 10,
-        borderColor: '#000',
-        borderWidth: 2,
-        backgroundColor: 'darkblue',
-    },
-    buttonText: {
-        fontWeight: 'bold',
-        fontSize: 25,
-        textTransform: 'uppercase',
-        color: '#fff',
     },
 })

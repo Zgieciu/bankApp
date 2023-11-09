@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
 import StackNavigation from './components/stackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import getAccounts from './data/accounts';
+
+export const AccountsContext = createContext();
 
 export default function App() {
 
@@ -18,7 +20,9 @@ export default function App() {
         backgroundColor="#000"
         barStyle="light-content"
       />
-      <StackNavigation />
+      <AccountsContext.Provider value={accounts}>
+        <StackNavigation />
+      </AccountsContext.Provider>
     </NavigationContainer>
   );
 }

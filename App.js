@@ -9,6 +9,7 @@ export const AccountsContext = createContext();
 export default function App() {
 
   const [accounts, setAccounts] = useState([]);
+  const [activeAccount, setActiveAccount] = useState({});
 
   useEffect(() => {
     getAccounts(setAccounts);
@@ -20,9 +21,9 @@ export default function App() {
         backgroundColor="#000"
         barStyle="light-content"
       />
-      <AccountsContext.Provider value={accounts}>
+      <AccountsContext.Provider value={{ accounts, activeAccount, setActiveAccount }}>
         <StackNavigation />
       </AccountsContext.Provider>
-    </NavigationContainer>
+    </NavigationContainer >
   );
 }

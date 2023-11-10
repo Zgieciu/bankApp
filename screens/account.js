@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AccountsContext } from '../App';
 
 export default Login = () => {
+    const { activeAccount } = useContext(AccountsContext);
+
     return (
         <View style={styles.container}>
-            <AccountsContext.Consumer>
-                {accounts => accounts.map((account) => (
-                    <Text key={account.id}>{account.login}</Text>
-                ))}
-            </AccountsContext.Consumer>
+            <Text>Login: {activeAccount.login}</Text>
+            <Text>Hasło: {activeAccount.password}</Text>
         </View>
     )
 }

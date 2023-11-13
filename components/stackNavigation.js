@@ -4,23 +4,23 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Account from '../screens/account';
 import Home from '../screens/home';
 import Login from '../screens/login';
+import { lightBgColor, mainColor, textColor, } from '../styles/styles';
 
 const Stack = createStackNavigator();
 
 const screenOptions = {
     headerStyle: {
-        backgroundColor: 'darkblue',
+        backgroundColor: mainColor,
     },
     headerTitleStyle: {
         fontSize: 30,
-        color: '#fff',
+        color: textColor,
     },
-    headerTintColor: '#fff',
+    headerTintColor: textColor,
 }
 
 export default StackNavigation = () => {
     const logout = (navigation) => navigation.navigate('Home');
-
 
     return (
         <Stack.Navigator screenOptions={screenOptions}>
@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderWidth: 2,
         borderColor: '#000',
-        backgroundColor: '#444',
+        backgroundColor: lightBgColor,
     },
     buttonText: {
         fontSize: 20,
-        color: '#fff',
+        color: textColor,
     },
 })

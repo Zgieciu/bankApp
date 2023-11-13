@@ -2,20 +2,21 @@ import React, { useContext, useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
 import BtnLogin from '../components/btnLogin';
 import { AccountsContext } from '../App';
+import { bgColor, lightBgColor, mainColor, textColor, } from '../styles/styles';
 
 export default Login = ({ navigation }) => {
 
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
+    const [isFocusedLogin, setIsFocusedLogin] = useState(false);
+    const [isFocusedPassword, setIsFocusedPassword] = useState(false);
     const { accounts, setActiveAccount } = useContext(AccountsContext);
 
-    const handleLoginChange = text => {
-        setLogin(text);
-    };
+    const handleLoginFocus = () => setIsFocusedLogin(!isFocusedLogin);
+    const handlePasswordFocus = () => setIsFocusedPassword(!isFocusedPassword);
 
-    const handlePasswordChange = text => {
-        setPassword(text);
-    };
+    const handleLoginChange = text => setLogin(text);
+    const handlePasswordChange = text => setPassword(text);
 
     const handleLogin = () => {
         const loginCheck = accounts.find(account => account.login === login);
@@ -36,8 +37,25 @@ export default Login = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Okno loowania</Text>
-            <TextInput style={styles.input} placeholder='Login' value={login} onChangeText={handleLoginChange} />
-            <TextInput style={styles.input} placeholder='Hasło' secureTextEntry={true} value={password} onChangeText={handlePasswordChange} />
+            <TextInput
+                style={[styles.input, isFocusedLogin && styles.inputFocused]}
+                placeholder='Login'
+                placeholderTextColor='#555'
+                value={login}
+                onChangeText={handleLoginChange}
+                onFocus={handleLoginFocus}
+                onBlur={handleLoginFocus}
+            />
+            <TextInput
+                style={[styles.input, isFocusedPassword && styles.inputFocused]}
+                placeholder='Hasło'
+                placeholderTextColor='#555'
+                secureTextEntry={true}
+                value={password}
+                onChangeText={handlePasswordChange}
+                onFocus={handlePasswordFocus}
+                onBlur={handlePasswordFocus}
+            />
             <BtnLogin btnFunction={handleLogin} />
         </View>
     )
@@ -47,10 +65,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
+        backgroundColor: bgColor,
     },
     text: {
         marginTop: 150,
         fontSize: 30,
+        color: textColor,
     },
     input: {
         width: 300,
@@ -60,6 +80,12 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         textAlign: 'left',
         borderWidth: 2,
-        borderColor: '#000',
+        borderRadius: 10,
+        borderColor: '#302f2f',
+        backgroundColor: lightBgColor,
+        color: textColor,
+    },
+    inputFocused: {
+        borderColor: mainColor,
     },
 })

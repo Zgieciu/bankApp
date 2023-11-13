@@ -1,14 +1,25 @@
-import React, { useContext, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AccountsContext } from '../App';
+import { bgColor, textColor } from '../styles/styles';
 
 export default Login = () => {
     const { activeAccount } = useContext(AccountsContext);
 
+    const accountBalance = movements => (movements.reduce((acc, cur) => acc + cur)).toFixed(2);
+
     return (
         <View style={styles.container}>
-            <Text>Login: {activeAccount.login}</Text>
-            <Text>Hasło: {activeAccount.password}</Text>
+            <Text style={styles.textHeader}>Stan konta: </Text>
+            <Text style={styles.text}>
+                {accountBalance([...activeAccount.movements])} zł
+            </Text>
+            <TouchableOpacity>
+                <Text style={styles.links}>Pokaż historię transakcji</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Text style={styles.links}>Pokaż karty</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -16,6 +27,24 @@ export default Login = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        paddingLeft: 30,
+        backgroundColor: bgColor,
+    },
+    textHeader: {
+        marginTop: 50,
+        fontSize: 60,
+        color: textColor,
+    },
+    text: {
+        marginBottom: 80,
+        fontSize: 40,
+        color: textColor,
+    },
+    links: {
+        fontSize: 30,
+        marginBottom: 20,
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+        color: '#aaa',
     },
 })

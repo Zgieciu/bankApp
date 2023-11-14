@@ -3,10 +3,12 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AccountsContext } from '../App';
 import { bgColor, textColor } from '../styles/styles';
 
-export default Login = () => {
+export default Login = ({ navigation }) => {
     const { activeAccount } = useContext(AccountsContext);
 
     const accountBalance = movements => (movements.reduce((acc, cur) => acc + cur)).toFixed(2);
+
+    const goToPaymentHistory = () => navigation.navigate('PaymentHistory');
 
     return (
         <View style={styles.container}>
@@ -14,7 +16,7 @@ export default Login = () => {
             <Text style={styles.text}>
                 {accountBalance([...activeAccount.movements])} zł
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToPaymentHistory}>
                 <Text style={styles.links}>Pokaż historię transakcji</Text>
             </TouchableOpacity>
             <TouchableOpacity>

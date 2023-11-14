@@ -58,7 +58,7 @@ export default Login = ({ navigation }) => {
             />
             <BtnLogin btnFunction={handleLogin} />
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({

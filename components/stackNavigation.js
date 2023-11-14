@@ -5,6 +5,7 @@ import Account from '../screens/account';
 import Home from '../screens/home';
 import Login from '../screens/login';
 import { lightBgColor, mainColor, textColor, } from '../styles/styles';
+import paymentHistory from '../screens/paymentHistory';
 
 const Stack = createStackNavigator();
 
@@ -41,6 +42,9 @@ export default StackNavigation = () => {
                     )
                 }
             })} />
+            <Stack.Screen name="PaymentHistory" component={paymentHistory} options={{
+                title: 'Historia płatności',
+            }} />
         </Stack.Navigator>
     );
 }

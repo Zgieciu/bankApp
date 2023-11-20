@@ -5,7 +5,7 @@ import Account from '../screens/account';
 import Home from '../screens/home';
 import Login from '../screens/login';
 import PaymentHistory from '../screens/paymentHistory';
-import CreditCard from '../screens/creditCard';
+import Cards from '../screens/cards';
 import { lightBgColor, mainColor, textColor, } from '../styles/styles';
 
 const Stack = createStackNavigator();
@@ -46,8 +46,8 @@ export default StackNavigation = () => {
             <Stack.Screen name="PaymentHistory" component={PaymentHistory} options={{
                 title: 'Historia płatności',
             }} />
-            <Stack.Screen name="CreditCard" component={CreditCard} options={{
-                title: 'Karty kredytowe',
+            <Stack.Screen name="Cards" component={Cards} options={{
+                title: 'Karty',
             }} />
         </Stack.Navigator>
     );

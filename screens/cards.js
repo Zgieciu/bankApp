@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { bgColor, textColor } from '../styles/styles';
+import { bgColor } from '../styles/styles';
 
-export default CreditCard = () => {
+export default Cards = () => {
     return (
         <View style={styles.container}>
-            <Text>Karty kredytowe</Text>
+            <Text>Karty</Text>
         </View>
     )
 }

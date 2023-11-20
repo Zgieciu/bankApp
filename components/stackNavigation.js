@@ -4,8 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Account from '../screens/account';
 import Home from '../screens/home';
 import Login from '../screens/login';
+import PaymentHistory from '../screens/paymentHistory';
+import CreditCard from '../screens/creditCard';
 import { lightBgColor, mainColor, textColor, } from '../styles/styles';
-import paymentHistory from '../screens/paymentHistory';
 
 const Stack = createStackNavigator();
 
@@ -42,8 +43,11 @@ export default StackNavigation = () => {
                     )
                 }
             })} />
-            <Stack.Screen name="PaymentHistory" component={paymentHistory} options={{
+            <Stack.Screen name="PaymentHistory" component={PaymentHistory} options={{
                 title: 'Historia płatności',
+            }} />
+            <Stack.Screen name="CreditCard" component={CreditCard} options={{
+                title: 'Karty kredytowe',
             }} />
         </Stack.Navigator>
     );

@@ -9,6 +9,7 @@ export default Login = ({ navigation }) => {
     const accountBalance = movements => (movements.reduce((acc, cur) => acc + cur)).toFixed(2);
 
     const goToPaymentHistory = () => navigation.navigate('PaymentHistory');
+    const goToCreditCard = () => navigation.navigate('CreditCard');
 
     return (
         <View style={styles.container}>
@@ -19,7 +20,7 @@ export default Login = ({ navigation }) => {
             <TouchableOpacity onPress={goToPaymentHistory}>
                 <Text style={styles.links}>Pokaż historię transakcji</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToCreditCard}>
                 <Text style={styles.links}>Pokaż karty</Text>
             </TouchableOpacity>
         </View>

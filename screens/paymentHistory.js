@@ -11,14 +11,14 @@ export default PaymentHistory = () => {
     return (
         <View style={styles.container}>
             <ScrollView>
-                {movements.map(mov => {
+                {movements.map((mov, index) => {
                     if (mov > 0) {
                         return (
-                            <Payment movType='Wpłata' mov={mov} color='green' />
+                            <Payment movType='Wpłata' mov={mov} color='green' key={index} />
                         );
                     } else {
                         return (
-                            <Payment movType='Wypłata' mov={mov} color='red' />
+                            <Payment movType='Wypłata' mov={mov} color='red' key={index} />
                         );
                     }
                 })}

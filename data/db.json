@@ -17,8 +17,7 @@
                 -50,
                 100,
                 -1500
-            ],
-            "cardId": 1
+            ]
         },
         {
             "id": 2,
@@ -28,18 +27,24 @@
                 2000,
                 300,
                 -500
-            ],
-            "cardId": 2
+            ]
         }
     ],
-    "creditCards": [
+    "cards": [
         {
             "id": 1,
-            "cardNumber": 3456123567892051
+            "cardNumber": 3456123567892051,
+            "accountId": 1
         },
         {
             "id": 2,
-            "cardNumber": 3925069482611613
+            "cardNumber": 3925069482611613,
+            "accountId": 2
+        },
+        {
+            "id": 3,
+            "cardNumber": 3629200578492816,
+            "accountId": 2
         }
     ]
 }

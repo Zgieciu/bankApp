@@ -14,11 +14,19 @@ export default PaymentHistory = () => {
                 {movements.map((mov, index) => {
                     if (mov > 0) {
                         return (
-                            <Payment movType='Wpłata' mov={mov} color='green' key={index} />
+                            <Payment
+                                movType='Wpłata'
+                                mov={mov} color='green'
+                                key={index}
+                            />
                         );
                     } else {
                         return (
-                            <Payment movType='Wypłata' mov={mov} color='red' key={index} />
+                            <Payment
+                                movType='Wypłata'
+                                mov={mov} color='red'
+                                key={index}
+                            />
                         );
                     }
                 })}

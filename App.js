@@ -22,7 +22,7 @@ export default function App() {
         backgroundColor="#000"
         barStyle="light-content"
       />
-      <AccountsContext.Provider value={{ accounts, activeAccount, setActiveAccount }}>
+      <AccountsContext.Provider value={{ accounts, activeAccount, cards, setActiveAccount, setCards }}>
         <StackNavigation />
       </AccountsContext.Provider>
     </NavigationContainer >

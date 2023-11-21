@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
-import BtnLogin from '../components/btnLogin';
 import { AccountsContext } from '../App';
+import getCards from '../data/cardsData';
+import BtnLogin from '../components/btnLogin';
 import { bgColor, lightBgColor, mainColor, textColor, } from '../styles/styles';
 
 export default Login = ({ navigation }) => {
@@ -11,6 +12,7 @@ export default Login = ({ navigation }) => {
     const [isFocusedLogin, setIsFocusedLogin] = useState(false);
     const [isFocusedPassword, setIsFocusedPassword] = useState(false);
     const { accounts, setActiveAccount } = useContext(AccountsContext);
+    const { setCards } = useContext(AccountsContext);
 
     const handleLoginFocus = () => setIsFocusedLogin(!isFocusedLogin);
     const handlePasswordFocus = () => setIsFocusedPassword(!isFocusedPassword);
@@ -23,6 +25,7 @@ export default Login = ({ navigation }) => {
         if (loginCheck) {
             if (loginCheck.password === password) {
                 setActiveAccount(accounts.find(account => account.id === loginCheck.id));
+                getCards(setCards, loginCheck.id);
                 goToAccount();
             } else {
                 Alert.alert('Błąd logowania', 'Podano niepoprawne hasło, spróbuj jeszcze raz');

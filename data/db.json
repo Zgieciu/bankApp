@@ -34,16 +34,19 @@
         {
             "id": 1,
             "cardNumber": 3456123567892051,
+            "date": "03/24",
             "accountId": 1
         },
         {
             "id": 2,
             "cardNumber": 3925069482611613,
+            "date": "08/26",
             "accountId": 2
         },
         {
             "id": 3,
             "cardNumber": 3629200578492816,
+            "date": "02/28",
             "accountId": 2
         }
     ]

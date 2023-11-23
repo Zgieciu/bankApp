@@ -14,6 +14,8 @@ export default Login = ({ navigation }) => {
     const { accounts, setActiveAccount } = useContext(AccountsContext);
     const { setCards } = useContext(AccountsContext);
 
+    const goToAccount = () => navigation.navigate('TabNavigation');
+
     const handleLoginFocus = () => setIsFocusedLogin(!isFocusedLogin);
     const handlePasswordFocus = () => setIsFocusedPassword(!isFocusedPassword);
 
@@ -34,8 +36,6 @@ export default Login = ({ navigation }) => {
             Alert.alert('Błąd logowania', 'Konto o podanym loginie nie istnieje, spróbuj jeszcze raz');
         }
     };
-
-    const goToAccount = () => navigation.navigate('Account');
 
     return (
         <View style={styles.container}>

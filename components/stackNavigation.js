@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Account from '../screens/account';
 import Home from '../screens/home';
 import Login from '../screens/login';
 import PaymentHistory from '../screens/paymentHistory';
+import TabNavigation from './tabNavigation';
 import Cards from '../screens/cards';
 import { lightBgColor, mainColor, textColor, } from '../styles/styles';
 
@@ -32,7 +32,7 @@ export default StackNavigation = () => {
             <Stack.Screen name="Login" component={Login} options={{
                 title: 'Logowanie',
             }} />
-            <Stack.Screen name="Account" component={Account} options={({ navigation }) => ({
+            <Stack.Screen name="TabNavigation" component={TabNavigation} options={({ navigation }) => ({
                 title: 'Konto',
                 headerLeft: () => null,
                 headerRight: () => {

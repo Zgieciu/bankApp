@@ -13,7 +13,7 @@ export default Home = ({ navigation }) => {
             <FontAwesome name="bank" style={styles.icon} />
             <Text style={styles.text}>Witaj w naszej aplikacji</Text>
             <Text style={{ color: '#fff' }}>Zaloguj się aby kontynuować</Text>
-            <Btn text='Zaloguj sie' btnFunction={login} />
+            <Btn text='Zaloguj się' btnFunction={login} />
         </View>
     );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import BtnLogin from '../components/btnLogin';
+import Btn from '../components/btn';
 import { bgColor, mainColor, textColor } from '../styles/styles';
 
 export default Home = ({ navigation }) => {
@@ -13,7 +13,7 @@ export default Home = ({ navigation }) => {
             <FontAwesome name="bank" style={styles.icon} />
             <Text style={styles.text}>Witaj w naszej aplikacji</Text>
             <Text style={{ color: '#fff' }}>Zaloguj się aby kontynuować</Text>
-            <BtnLogin btnFunction={login} />
+            <Btn text='Zaloguj sie' btnFunction={login} />
         </View>
     );
 }

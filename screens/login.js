@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
 import { AccountsContext } from '../App';
 import getCards from '../data/cardsData';
-import BtnLogin from '../components/btnLogin';
+import Btn from '../components/btn';
 import { bgColor, lightBgColor, mainColor, textColor, } from '../styles/styles';
 
 export default Login = ({ navigation }) => {
@@ -59,7 +59,7 @@ export default Login = ({ navigation }) => {
                 onFocus={handlePasswordFocus}
                 onBlur={handlePasswordFocus}
             />
-            <BtnLogin btnFunction={handleLogin} />
+            <Btn text='Zaloguj sie' btnFunction={handleLogin} />
         </View>
     );
 }

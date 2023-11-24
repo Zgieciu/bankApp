@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { mainColor, textColor } from '../styles/styles';
 
-export default BtnLogin = ({ btnFunction }) => {
+export default Btn = ({ text, btnFunction }) => {
     return (
         <TouchableOpacity style={styles.button} onPress={btnFunction}>
-            <Text style={styles.buttonText}>Zaloguj się</Text>
+            <Text style={styles.buttonText}>{text}</Text>
         </TouchableOpacity>
     );
 }

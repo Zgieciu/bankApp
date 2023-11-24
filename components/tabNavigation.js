@@ -13,7 +13,8 @@ const Tab = createBottomTabNavigator();
 const screenOptions = {
     tabBarActiveTintColor: bgColor,
     tabBarInactiveTintColor: textColor,
-    tabBarStyle: { backgroundColor: mainColor }
+    tabBarStyle: { backgroundColor: mainColor },
+    tabBarHideOnKeyboard: true,
 }
 
 const tabOptions = {

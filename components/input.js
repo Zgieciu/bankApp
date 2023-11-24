@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { lightBgColor, textColor, mainColor } from '../styles/styles';
 
-export default Input = ({ changeFunction, text, value }) => {
+export default Input = ({ changeFunction, text, type = 'text', value }) => {
 
     const [isFocused, setIsFocused] = useState(false);
 
@@ -14,6 +14,7 @@ export default Input = ({ changeFunction, text, value }) => {
                 style={[styles.input, isFocused && styles.inputFocused]}
                 placeholder={text}
                 placeholderTextColor='#555'
+                keyboardType={type}
                 value={value}
                 onChangeText={changeFunction}
                 onFocus={handleFocus}

@@ -2,8 +2,9 @@
     "accounts": [
         {
             "id": 1,
-            "login": "1111",
-            "password": "1111",
+            "login": "login1",
+            "password": "haslo1",
+            "accNumber": 1111,
             "movements": [
                 200,
                 500,
@@ -21,8 +22,9 @@
         },
         {
             "id": 2,
-            "login": "2222",
-            "password": "2222",
+            "login": "login2",
+            "password": "haslo2",
+            "accNumber": 2222,
             "movements": [
                 2000,
                 300,

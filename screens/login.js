@@ -36,8 +36,17 @@ export default Login = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Okno logowania</Text>
-            <Input changeFunction={handleLoginChange} text='Login' value={login} />
-            <Input changeFunction={handlePasswordChange} text='Hasło' value={password} />
+            <Input
+                changeFunction={handleLoginChange}
+                text='Login'
+                value={login}
+            />
+            <Input
+                changeFunction={handlePasswordChange}
+                password={true}
+                text='Hasło'
+                value={password}
+            />
             <Btn text='Zaloguj się' btnFunction={handleLogin} />
         </View>
     );

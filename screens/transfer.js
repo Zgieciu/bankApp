@@ -10,29 +10,53 @@ export default Transfer = () => {
     const [accountNumber, setAccountNumber] = useState();
     const [amount, setAmount] = useState();
 
-    const { accountBalance, accounts, activeAccount, setActiveAccount } = useContext(AccountsContext);
+    const { accountBalance, accounts, activeAccount } = useContext(AccountsContext);
 
-    const handleTransfer = () => {
-        const account = accounts.find(acc => acc.accountNumber === accountNumber);
-        const data = parseFloat(amount);
+    const handleInputCheck = (account, data) => {
         if (!account) {
             Alert.alert('Wystąpił błąd', 'Konto o podanym numerze nie istnieje.');
-            return 0;
+            return false;
+        }
+
+        if (account.accountNumber === activeAccount.accountNumber) {
+            Alert.alert('Wystąpił błąd', 'Nie można dokonać przelewu na swoje konto.');
+            return false;
+        }
+
+        if (isNaN(data)) {
+            Alert.alert('Wystąpił błąd', 'Pole z kwotą nie zostałe wypełnione');
+            return false;
         }
 
         if (data > accountBalance(activeAccount.movements)) {
             Alert.alert('Wystąpił błąd', 'Nie masz wystarczającej ilości środków na koncie.');
-            return 0;
+            return false;
         }
 
         if (data < 1) {
             Alert.alert('Wystąpił błąd', 'Minimalna kwota przelewy to 1 zł');
-            return 0;
+            return false;
         }
-        activeAccount.movements.push(-data);
-        account.movements.push(data);
-        setAccountNumber('');
-        setAmount('');
+
+        return true;
+    }
+
+    const handleTransfer = () => {
+        const account = accounts.find(acc => acc.accountNumber === accountNumber);
+        const data = parseFloat(parseFloat(amount).toFixed(2));
+
+        console.log(typeof data);
+        console.log(data);
+
+        const condition = handleInputCheck(account, data);
+
+
+        if (condition) {
+            activeAccount.movements.push(-data);
+            account.movements.push(data);
+            setAccountNumber('');
+            setAmount('');
+        }
     }
 
     return (

@@ -4,9 +4,7 @@ import { AccountsContext } from '../App';
 import { bgColor, textColor } from '../styles/styles';
 
 export default Login = ({ navigation }) => {
-    const { activeAccount } = useContext(AccountsContext);
-
-    const accountBalance = movements => (movements.reduce((acc, cur) => acc + cur)).toFixed(2);
+    const { accountBalance, activeAccount } = useContext(AccountsContext);
 
     const goToPaymentHistory = () => navigation.navigate('PaymentHistory');
     const goToCards = () => navigation.navigate('Cards');

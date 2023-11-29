@@ -4,7 +4,7 @@
             "id": 1,
             "login": "login1",
             "password": "haslo1",
-            "accNumber": 1111,
+            "accountNumber": "1111",
             "movements": [
                 200,
                 500,
@@ -24,7 +24,7 @@
             "id": 2,
             "login": "login2",
             "password": "haslo2",
-            "accNumber": 2222,
+            "accountNumber": "2222",
             "movements": [
                 2000,
                 300,

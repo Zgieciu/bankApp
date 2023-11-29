@@ -16,13 +16,15 @@ export default function App() {
     getAccounts(setAccounts);
   }, [])
 
+  const accountBalance = movements => (movements.reduce((acc, cur) => acc + cur)).toFixed(2);
+
   return (
     <NavigationContainer>
       <StatusBar
         backgroundColor="#000"
         barStyle="light-content"
       />
-      <AccountsContext.Provider value={{ accounts, activeAccount, cards, setActiveAccount, setCards }}>
+      <AccountsContext.Provider value={{ accountBalance, accounts, activeAccount, cards, setActiveAccount, setCards }}>
         <StackNavigation />
       </AccountsContext.Provider>
     </NavigationContainer >

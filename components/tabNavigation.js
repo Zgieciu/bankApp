@@ -15,6 +15,7 @@ const screenOptions = {
     tabBarInactiveTintColor: textColor,
     tabBarStyle: { backgroundColor: mainColor },
     tabBarHideOnKeyboard: true,
+    unmountOnBlur: true,
 }
 
 const tabOptions = {

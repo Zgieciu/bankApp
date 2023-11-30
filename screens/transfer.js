@@ -3,6 +3,7 @@ import { Alert, StyleSheet, Text, View } from 'react-native';
 import Btn from '../components/btn';
 import Input from '../components/input';
 import { AccountsContext } from '../App';
+import { getAccounts, putAccount } from '../data/accountsData';
 import { bgColor, textColor } from '../styles/styles';
 
 export default Transfer = () => {
@@ -45,15 +46,15 @@ export default Transfer = () => {
         const account = accounts.find(acc => acc.accountNumber === accountNumber);
         const data = parseFloat(parseFloat(amount).toFixed(2));
 
-        console.log(typeof data);
-        console.log(data);
-
         const condition = handleInputCheck(account, data);
-
 
         if (condition) {
             activeAccount.movements.push(-data);
             account.movements.push(data);
+
+            putAccount(activeAccount);
+            putAccount(account);
+
             setAccountNumber('');
             setAmount('');
         }

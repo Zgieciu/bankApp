@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
 import { AccountsContext } from '../App';
-import getCards from '../data/cardsData';
+import { getCards } from '../data/cardsData';
 import Btn from '../components/btn';
 import Input from '../components/input';
-import { bgColor, lightBgColor, mainColor, textColor, } from '../styles/styles';
+import { bgColor, textColor, } from '../styles/styles';
 
 export default Login = ({ navigation }) => {
 

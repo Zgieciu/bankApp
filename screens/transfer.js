@@ -3,10 +3,11 @@ import { Alert, StyleSheet, Text, View } from 'react-native';
 import Btn from '../components/btn';
 import Input from '../components/input';
 import { AccountsContext } from '../App';
-import { getAccounts, putAccount } from '../data/accountsData';
+import { putAccount } from '../data/accountsData';
+import { AccSensor } from '../components/accSensor';
 import { bgColor, textColor } from '../styles/styles';
 
-export default Transfer = () => {
+export default Transfer = ({ navigation }) => {
 
     const [accountNumber, setAccountNumber] = useState();
     const [amount, setAmount] = useState();
@@ -62,6 +63,7 @@ export default Transfer = () => {
 
     return (
         <View style={styles.container}>
+            <AccSensor navigation={navigation} />
             <Text style={styles.text}>Numer konta:</Text>
             <Input
                 changeFunction={setAccountNumber}

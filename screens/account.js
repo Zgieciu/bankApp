@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AccountsContext } from '../App';
+import { AccSensor } from '../components/accSensor';
 import { bgColor, textColor } from '../styles/styles';
 
 export default Login = ({ navigation }) => {
@@ -11,6 +12,7 @@ export default Login = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+            <AccSensor navigation={navigation} />
             <Text style={styles.textHeader}>Stan konta: </Text>
             <Text style={styles.text}>
                 {accountBalance([...activeAccount.movements])} zł

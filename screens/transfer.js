@@ -9,10 +9,13 @@ import { bgColor, textColor } from '../styles/styles';
 
 export default Transfer = ({ navigation }) => {
 
+    const { accountBalance, accounts, activeAccount } = useContext(AccountsContext);
+
     const [accountNumber, setAccountNumber] = useState();
     const [amount, setAmount] = useState();
 
-    const { accountBalance, accounts, activeAccount } = useContext(AccountsContext);
+    const handleAccountNumberChange = text => setAccountNumber(text);
+    const handleAmountChange = text => setAmount(text);
 
     const handleInputCheck = (account, data) => {
         if (!account) {
@@ -66,7 +69,7 @@ export default Transfer = ({ navigation }) => {
             <AccSensor navigation={navigation} />
             <Text style={styles.text}>Numer konta:</Text>
             <Input
-                changeFunction={setAccountNumber}
+                changeFunction={handleAccountNumberChange}
                 text='Podaj numer konta'
                 type='numeric'
                 value={accountNumber}
@@ -74,7 +77,7 @@ export default Transfer = ({ navigation }) => {
 
             <Text style={styles.text}>Kwota:</Text>
             <Input
-                changeFunction={setAmount}
+                changeFunction={handleAmountChange}
                 text='Podaj kwotę'
                 type='numeric'
                 value={amount}

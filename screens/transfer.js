@@ -29,7 +29,7 @@ export default Transfer = ({ navigation }) => {
         }
 
         if (isNaN(data)) {
-            Alert.alert('Wystąpił błąd', 'Pole z kwotą nie zostałe wypełnione');
+            Alert.alert('Wystąpił błąd', 'Pole z kwotą nie zostało wypełnione');
             return false;
         }
 

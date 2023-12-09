@@ -16,6 +16,7 @@ export const putAccount = account => {
             const updatedAccount = {
                 ...currentAccount,
                 movements: account.movements,
+                loan: account.loan,
             }
 
             const options = {

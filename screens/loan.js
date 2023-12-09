@@ -3,6 +3,7 @@ import { Alert, StyleSheet, Text, View } from 'react-native';
 import { AccountsContext } from '../App';
 import Btn from '../components/btn';
 import Input from '../components/input';
+import { putAccount } from '../data/accountsData';
 import { bgColor, textColor } from '../styles/styles';
 
 export default Loan = () => {
@@ -71,7 +72,7 @@ export default Loan = () => {
             activeAccount.movements.push(data);
             activeAccount.loan = data;
 
-            console.log(activeAccount);
+            putAccount(activeAccount);
 
             setLoan('');
         }

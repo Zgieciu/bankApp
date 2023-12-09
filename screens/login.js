@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { Alert, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 import { AccountsContext } from '../App';
-import { getCards } from '../data/cardsData';
 import Btn from '../components/btn';
 import Input from '../components/input';
+import { getCards } from '../data/cardsData';
 import { bgColor, textColor, } from '../styles/styles';
 
 export default Login = ({ navigation }) => {

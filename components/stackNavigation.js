@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Cards from '../screens/cards';
 import Home from '../screens/home';
 import Login from '../screens/login';
 import PaymentHistory from '../screens/paymentHistory';
 import TabNavigation from './tabNavigation';
-import Cards from '../screens/cards';
 import { lightBgColor, mainColor, textColor, } from '../styles/styles';
 
 const Stack = createStackNavigator();

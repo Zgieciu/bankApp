@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
+import { AccountsContext } from '../App';
+import { AccSensor } from '../components/accSensor';
 import Btn from '../components/btn';
 import Input from '../components/input';
-import { AccountsContext } from '../App';
 import { putAccount } from '../data/accountsData';
-import { AccSensor } from '../components/accSensor';
 import { bgColor, textColor } from '../styles/styles';
 
 export default Transfer = ({ navigation }) => {

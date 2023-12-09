@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Account from '../screens/account';
-import Transfer from '../screens/transfer';
-import Loan from '../screens/loan';
 import Cantor from '../screens/cantor';
+import Loan from '../screens/loan';
+import Transfer from '../screens/transfer';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';

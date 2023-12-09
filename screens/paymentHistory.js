@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { AccountsContext } from '../App';
 import Payment from '../components/payment';
 import { bgColor } from '../styles/styles';

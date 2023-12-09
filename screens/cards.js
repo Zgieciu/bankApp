@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Alert, ScrollView, StyleSheet, View } from 'react-native';
 import { AccountsContext } from '../App';
-import Card from '../components/card';
 import Btn from '../components/btn';
+import Card from '../components/card';
 import { getCards, postCard } from '../data/cardsData';
 import { bgColor } from '../styles/styles';
 

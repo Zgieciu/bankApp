@@ -19,7 +19,15 @@
                 100,
                 -1500
             ],
-            "loan": 0
+            "loan": 0,
+            "currencies": {
+                "EUR": 100,
+                "USD": 200,
+                "GBP": 0,
+                "CHF": 0,
+                "AED": 0,
+                "AUD": 0
+            }
         },
         {
             "id": 2,
@@ -31,7 +39,37 @@
                 300,
                 -500
             ],
-            "loan": 0
+            "loan": 0,
+            "currencies": {
+                "EUR": 0,
+                "USD": 0,
+                "GBP": 2500,
+                "CHF": 0,
+                "AED": 0,
+                "AUD": 0
+            }
+        },
+        {
+            "id": 3,
+            "login": "login3",
+            "password": "haslo3",
+            "accountNumber": "3333",
+            "movements": [
+                100,
+                200,
+                550,
+                120,
+                1000
+            ],
+            "loan": 0,
+            "currencies": {
+                "EUR": 0,
+                "USD": 0,
+                "GBP": 0,
+                "CHF": 0,
+                "AED": 0,
+                "AUD": 0
+            }
         }
     ],
     "cards": [

@@ -9,6 +9,7 @@ export default Login = ({ navigation }) => {
 
     const goToPaymentHistory = () => navigation.navigate('PaymentHistory');
     const goToCards = () => navigation.navigate('Cards');
+    const goToCurrencies = () => navigation.navigate('Currencies');
 
     return (
         <View style={styles.container}>
@@ -22,6 +23,9 @@ export default Login = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity onPress={goToCards}>
                 <Text style={styles.links}>Pokaż karty</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={goToCurrencies}>
+                <Text style={styles.links}>Pokaż waluty</Text>
             </TouchableOpacity>
         </View>
     )

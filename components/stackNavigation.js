@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Cards from '../screens/cards';
+import Currencies from '../screens/currencies';
 import Home from '../screens/home';
 import Login from '../screens/login';
 import PaymentHistory from '../screens/paymentHistory';
@@ -47,6 +48,9 @@ export default StackNavigation = () => {
                 title: 'Historia płatności',
             }} />
             <Stack.Screen name="Cards" component={Cards} options={{
+                title: 'Karty',
+            }} />
+            <Stack.Screen name="Currencies" component={Currencies} options={{
                 title: 'Karty',
             }} />
         </Stack.Navigator>

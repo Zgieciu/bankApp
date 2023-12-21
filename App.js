@@ -1,10 +1,9 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
+import AccountsContext from './components/accountsContext';
 import StackNavigation from './components/stackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { getAccounts } from './data/accountsData';
-
-export const AccountsContext = createContext();
 
 export default function App() {
 

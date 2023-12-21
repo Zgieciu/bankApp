@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Alert, ScrollView, StyleSheet, View } from 'react-native';
-import { AccountsContext } from '../App';
+import AccountsContext from '../components/accountsContext';
 import Btn from '../components/btn';
 import Card from '../components/card';
 import { getCards, postCard } from '../data/cardsData';

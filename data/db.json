@@ -90,18 +90,6 @@
       "cardNumber": 3629200578492816,
       "date": "02/28",
       "accountId": 2
-    },
-    {
-      "cardNumber": 917370548143546,
-      "date": "12/28",
-      "accountId": 3,
-      "id": 4
-    },
-    {
-      "cardNumber": 1622501654147185,
-      "date": "12/28",
-      "accountId": 3,
-      "id": 5
     }
   ]
 }

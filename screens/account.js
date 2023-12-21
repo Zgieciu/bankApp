@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { AccountsContext } from '../App';
+import AccountsContext from '../components/accountsContext';
 import { AccSensor } from '../components/accSensor';
 import { bgColor, textColor } from '../styles/styles';
 

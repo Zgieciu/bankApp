@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
-import { AccountsContext } from '../App';
+import AccountsContext from '../components/accountsContext';
 import Btn from '../components/btn';
 import Input from '../components/input';
 import { putAccount } from '../data/accountsData';

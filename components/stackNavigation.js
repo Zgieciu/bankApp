@@ -27,13 +27,13 @@ export default StackNavigation = () => {
 
     return (
         <Stack.Navigator screenOptions={screenOptions}>
-            <Stack.Screen name="Home" component={Home} options={{
+            <Stack.Screen name='Home' component={Home} options={{
                 title: 'Strona główna',
             }} />
-            <Stack.Screen name="Login" component={Login} options={{
+            <Stack.Screen name='Login' component={Login} options={{
                 title: 'Logowanie',
             }} />
-            <Stack.Screen name="TabNavigation" component={TabNavigation} options={({ navigation }) => ({
+            <Stack.Screen name='TabNavigation' component={TabNavigation} options={({ navigation }) => ({
                 title: 'Konto',
                 headerLeft: () => null,
                 headerRight: () => {
@@ -44,13 +44,13 @@ export default StackNavigation = () => {
                     )
                 }
             })} />
-            <Stack.Screen name="PaymentHistory" component={PaymentHistory} options={{
+            <Stack.Screen name='PaymentHistory' component={PaymentHistory} options={{
                 title: 'Historia płatności',
             }} />
-            <Stack.Screen name="Cards" component={Cards} options={{
+            <Stack.Screen name='Cards' component={Cards} options={{
                 title: 'Karty',
             }} />
-            <Stack.Screen name="Currencies" component={Currencies} options={{
+            <Stack.Screen name='Currencies' component={Currencies} options={{
                 title: 'Karty',
             }} />
         </Stack.Navigator>

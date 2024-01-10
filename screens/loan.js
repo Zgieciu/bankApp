@@ -18,12 +18,12 @@ export default Loan = () => {
 
     const handleGetLoanCheck = () => {
         if (loan > accountBalance([...activeAccount.movements]) / 2) {
-            Alert.alert("Wystąpił błąd", "Nie można udzielić pożyczki większej niż połowa kwoty posiadanej na koncie")
+            Alert.alert('Wystąpił błąd', 'Nie można udzielić pożyczki większej niż połowa kwoty posiadanej na koncie')
             return false
         }
 
         if (activeAccount.loan > 0) {
-            Alert.alert("Wystąpił błąd", `Nie można udzielić kolejnej pożyczki. Najpierw spłać aktualną pożyczkę. Pozostała kwota to: ${activeAccount.loan} zł`)
+            Alert.alert('Wystąpił błąd', `Nie można udzielić kolejnej pożyczki. Najpierw spłać aktualną pożyczkę. Pozostała kwota to: ${activeAccount.loan} zł`)
             return false
         }
 
@@ -42,12 +42,12 @@ export default Loan = () => {
 
     const handlePayLoanCheck = () => {
         if (activeAccount.loan === 0) {
-            Alert.alert("Wystąpił błąd", "Nie posiadasz aktualnie żadnej pożyczki do spłaty");
+            Alert.alert('Wystąpił błąd', 'Nie posiadasz aktualnie żadnej pożyczki do spłaty');
             return false;
         }
 
         if (activeAccount.loan < payLoan) {
-            Alert.alert("Wystąpił błąd", `Kwota spłaty nie może być większa od pozostałej należności. Pozostało do spłaty: ${activeAccount.loan}`);
+            Alert.alert('Wystąpił błąd', `Kwota spłaty nie może być większa od pozostałej należności. Pozostało do spłaty: ${activeAccount.loan}`);
             return false;
         }
 
@@ -75,6 +75,8 @@ export default Loan = () => {
             putAccount(activeAccount);
 
             setLoan('');
+
+            Alert.alert('Pożyczka została udzielona', `Kwota pożyczki: ${data}`);
         }
     }
 
@@ -87,9 +89,9 @@ export default Loan = () => {
             activeAccount.loan -= data;
 
             if (activeAccount.loan === 0)
-                Alert.alert("Powodzenie spłaty", "Cała pożyczka została spłacona");
+                Alert.alert('Powodzenie spłaty', 'Cała pożyczka została spłacona');
             else
-                Alert.alert("Powodzenie spłaty", `Spłata przyznana, pozostało: ${activeAccount.loan}`);
+                Alert.alert('Powodzenie spłaty', `Spłata przyznana, pozostało: ${activeAccount.loan}`);
 
             console.log(activeAccount);
 

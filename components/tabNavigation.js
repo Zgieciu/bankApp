@@ -26,14 +26,14 @@ const tabOptions = {
 export default TabNavigation = () => {
     return (
         <Tab.Navigator screenOptions={screenOptions}>
-            <Tab.Screen name="Account"
+            <Tab.Screen name='Account'
                 component={Account}
                 options={{
                     ...tabOptions,
                     tabBarIcon: ({ color }) => <MaterialIcons name="account-balance-wallet" size={35} color={color} />
                 }}
             />
-            <Tab.Screen name="Transfer"
+            <Tab.Screen name='Transfer'
                 component={Transfer}
                 options={{
                     ...tabOptions,
@@ -41,7 +41,7 @@ export default TabNavigation = () => {
                 }}
             />
             <Tab.Screen
-                name="Loan"
+                name='Loan'
                 component={Loan}
                 options={{
                     ...tabOptions,
@@ -49,7 +49,7 @@ export default TabNavigation = () => {
                 }}
             />
             <Tab.Screen
-                name="Cantor"
+                name='Cantor'
                 component={Cantor}
                 options={{
                     ...tabOptions,

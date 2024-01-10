@@ -61,6 +61,8 @@ export default Transfer = ({ navigation }) => {
 
             setAccountNumber('');
             setAmount('');
+
+            Alert.alert('Przelew został wykonany pomyślnie', `Przelano ${data} zł na konto o numerze ${account.accountNumber}`);
         }
     }
 

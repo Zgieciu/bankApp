@@ -1,21 +1,21 @@
-import React, { useState, useContext } from "react";
-import { StyleSheet, Text, View, Alert } from "react-native";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
-import CountryFlag from "react-native-country-flag";
-import AccountsContext from "../components/accountsContext";
-import { putAccount } from "../data/accountsData";
-import { bgColor, textColor } from "../styles/styles";
+import React, { useState, useContext } from 'react';
+import { StyleSheet, Text, View, Alert, ScrollView } from 'react-native';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import CountryFlag from 'react-native-country-flag';
+import AccountsContext from '../components/accountsContext';
+import { putAccount } from '../data/accountsData';
+import { bgColor, textColor } from '../styles/styles';
 
 const currencyBuy = [
-    { label: "EUR", value: "4.45", isoCode: "EU" },
-    { label: "USD", value: "4.16", isoCode: "US" },
-    { label: "GBP", value: "5.11", isoCode: "GB" },
-    { label: "CHF", value: "4.61", isoCode: "CH" },
-    { label: "AED", value: "1.12", isoCode: "AE" },
-    { label: "AUD", value: "2.68", isoCode: "AU" },
+    { label: 'EUR', value: '4.45', isoCode: 'EU' },
+    { label: 'USD', value: '4.16', isoCode: 'US' },
+    { label: 'GBP', value: '5.11', isoCode: 'GB' },
+    { label: 'CHF', value: '4.61', isoCode: 'CH' },
+    { label: 'AED', value: '1.12', isoCode: 'AE' },
+    { label: 'AUD', value: '2.68', isoCode: 'AU' },
 ];
 
-const Cantor = () => {
+export default Cantor = () => {
     const [amount, setAmount] = useState('');
     const [checkedIndex, setCheckedIndex] = useState(-1);
     const [isChecked, setIsChecked] = useState(false);
@@ -42,7 +42,7 @@ const Cantor = () => {
 
     const handleExchange = (type) => {
         if (selectedCurrency === '' || !amount) {
-            Alert.alert("Wybierz walutę i wprowadź kwotę do wymiany");
+            Alert.alert('Wystąpił błąd', 'Wybierz walutę i wprowadź kwotę do wymiany');
             return;
         }
 
@@ -60,7 +60,7 @@ const Cantor = () => {
 
     const handleExchangeBuy = (exchangedAmount, data) => {
         if (exchangedAmount > accountBalance([...activeAccount.movements])) {
-            Alert.alert("Saldo jest niewystarczające");
+            Alert.alert('Wystąpił błąd', 'Saldo jest niewystarczające');
             return;
         }
 
@@ -69,7 +69,7 @@ const Cantor = () => {
         activeAccount.currencies[selectedCurrency] = prevCurriency + data;
 
         putAccount(activeAccount);
-        setAmount("");
+        setAmount('');
 
         const message = `Kupiłeś: ${amount} ${selectedCurrency} za ${exchangedAmount.toFixed(2)} PLN`;
         Alert.alert(message);
@@ -77,7 +77,7 @@ const Cantor = () => {
 
     const handleExchangeSell = (exchangedAmount, data) => {
         if (parseFloat(amount) > activeAccount.currencies[selectedCurrency]) {
-            Alert.alert("Niewystarczająca ilość waluty");
+            Alert.alert('Wystąpił błąd', 'Niewystarczająca ilość waluty');
             return;
         }
 
@@ -86,109 +86,78 @@ const Cantor = () => {
         activeAccount.currencies[selectedCurrency] = prevCurriency - data;
 
         putAccount(activeAccount);
-        setAmount("");
+        setAmount('');
 
         const message = `Sprzedałeś: ${amount} ${selectedCurrency} za ${exchangedAmount.toFixed(2)} PLN`;
         Alert.alert(message);
     };
 
     return (
-        <View style={styles.exchange}>
-            <Text style={styles.greet}>
+        <View style={styles.container}>
+            <Text style={styles.header}>
                 Saldo: {accountBalance([...activeAccount.movements])} zł
             </Text>
-            <View style={styles.exchangeRow}>
+            <View>
                 <Input
                     changeFunction={onChangeAmount}
-                    text="Kwota do wymiany"
-                    type="numeric"
+                    text='Kwota do wymiany'
+                    type='numeric'
                     value={amount}
                 />
             </View>
-            <View style={styles.currencies}>
+            <View style={styles.currenciesContainer}>
                 {currencyBuy.map((item, index) => (
-                    <View key={index} style={styles.currencyItem}>
-                        <View style={styles.container_swap}>
+                    <View key={index}>
+                        <View style={styles.currencies}>
                             <BouncyCheckbox
                                 style={isChecked && index !== checkedIndex && { display: 'none' }}
                                 isChecked={isChecked}
-                                fillColor="blue"
+                                fillColor='blue'
                                 onPress={() => handleCurrencySelect(item.label, index)}
                             />
-                            <Text style={[styles.shortcut, { fontWeight: "bold", fontSize: 20 }]}>
+                            <Text style={[styles.shortcut, { fontWeight: 'bold', fontSize: 20 }]}>
                                 <CountryFlag isoCode={item.isoCode} size={25} /> {item.label} ({item.value})
                             </Text>
                         </View>
                     </View>
                 ))}
-            </View>
-            <View style={styles.fixToText}>
-                <Btn text="Kupuję" btnFunction={() => handleExchange(true)} />
-                <Btn text="Sprzedaję" btnFunction={() => handleExchange(false)} />
+                <View style={styles.btnContainer}>
+                    <Btn text='Kupuję' btnFunction={() => handleExchange(true)} />
+                    <Btn text='Sprzedaję' btnFunction={() => handleExchange(false)} />
+                </View>
             </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    exchange: {
+    container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "space-between",
+        alignItems: 'center',
         backgroundColor: bgColor,
+        paddingTop: 10,
+        paddingBottom: 10,
     },
-    greet: {
+    header: {
         paddingTop: 10,
         fontSize: 30,
         color: textColor,
     },
-    fixToText: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        padding: 10,
+    btnContainer: {
+        flexDirection: 'row',
     },
-    button: {
-        marginTop: 50,
-        fontSize: 30,
-        color: textColor,
+    currenciesContainer: {
+        flex: 1,
+        alignItems: 'center',
+        margin: 20,
     },
     currencies: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "space-between",
+        flexDirection: 'row',
+        alignItems: 'center',
         margin: 10,
-        paddingTop: 25,
-    },
-    currencyItem: {
-        flexDirection: "row",
-    },
-    container_swap: {
-        flexDirection: "row",
-        alignItems: "center",
-        margin: 10,
-    },
-    exchangeRow: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-    input: {
-        height: 40,
-        width: 180,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
-    buttonText: {
-        fontWeight: "bold",
-        fontSize: 25,
-        textTransform: "uppercase",
-        color: "#fff",
     },
     shortcut: {
         marginLeft: 10,
         color: textColor,
     },
 });
-
-export default Cantor;

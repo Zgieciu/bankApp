@@ -10,7 +10,7 @@ export default Home = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <FontAwesome name="bank" style={styles.icon} />
+            <FontAwesome name='bank' style={styles.icon} />
             <Text style={styles.text}>Witaj w naszej aplikacji</Text>
             <Text style={{ color: '#fff' }}>Zaloguj się aby kontynuować</Text>
             <Btn text='Zaloguj się' btnFunction={login} />

@@ -21,7 +21,7 @@ export default Cards = () => {
 
     const cardDate = () => {
         const date = new Date();
-        const month = date.getMonth() + 1;
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
         const year = date.getFullYear() + 5;
 
         return `${month}/${year % 100}`;

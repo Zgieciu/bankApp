@@ -17,15 +17,16 @@ export const putAccount = account => {
                 ...currentAccount,
                 movements: account.movements,
                 loan: account.loan,
-            }
+                currencies: account.currencies,
+            };
 
             const options = {
                 method: 'PUT',
                 body: JSON.stringify(updatedAccount),
                 headers: {
                     "Content-Type": "application/json",
-                }
-            }
+                },
+            };
 
             fetch(`http://${ip}/accounts/${account.id}`, options)
                 .then(response => response.json())

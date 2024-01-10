@@ -1,95 +1,95 @@
 {
-  "accounts": [
-    {
-      "id": 1,
-      "login": "login1",
-      "password": "haslo1",
-      "accountNumber": "1111",
-      "movements": [
-        200,
-        500,
-        1200,
-        -250,
-        100,
-        -500,
-        2200,
-        -100,
-        -350,
-        -50,
-        100,
-        -1500
-      ],
-      "loan": 0,
-      "currencies": {
-        "EUR": 100,
-        "USD": 200,
-        "GBP": 0,
-        "CHF": 0,
-        "AED": 0,
-        "AUD": 0
-      }
-    },
-    {
-      "id": 2,
-      "login": "login2",
-      "password": "haslo2",
-      "accountNumber": "2222",
-      "movements": [
-        2000,
-        300,
-        -500
-      ],
-      "loan": 0,
-      "currencies": {
-        "EUR": 0,
-        "USD": 0,
-        "GBP": 2500,
-        "CHF": 0,
-        "AED": 0,
-        "AUD": 0
-      }
-    },
-    {
-      "id": 3,
-      "login": "login3",
-      "password": "haslo3",
-      "accountNumber": "3333",
-      "movements": [
-        100,
-        200,
-        550,
-        120,
-        1000
-      ],
-      "loan": 0,
-      "currencies": {
-        "EUR": 0,
-        "USD": 0,
-        "GBP": 0,
-        "CHF": 0,
-        "AED": 0,
-        "AUD": 0
-      }
-    }
-  ],
-  "cards": [
-    {
-      "id": 1,
-      "cardNumber": 3456123567892051,
-      "date": "03/24",
-      "accountId": 1
-    },
-    {
-      "id": 2,
-      "cardNumber": 3925069482611613,
-      "date": "08/26",
-      "accountId": 2
-    },
-    {
-      "id": 3,
-      "cardNumber": 3629200578492816,
-      "date": "02/28",
-      "accountId": 2
-    }
-  ]
+    "accounts": [
+        {
+            "id": 1,
+            "login": "login1",
+            "password": "haslo1",
+            "accountNumber": "1111",
+            "movements": [
+                200,
+                500,
+                1200,
+                -250,
+                100,
+                -500,
+                2200,
+                -100,
+                -350,
+                -50,
+                100,
+                -1500
+            ],
+            "loan": 0,
+            "currencies": {
+                "EUR": 100,
+                "USD": 200,
+                "GBP": 0,
+                "CHF": 0,
+                "AED": 0,
+                "AUD": 0
+            }
+        },
+        {
+            "id": 2,
+            "login": "login2",
+            "password": "haslo2",
+            "accountNumber": "2222",
+            "movements": [
+                2000,
+                300,
+                -500
+            ],
+            "loan": 0,
+            "currencies": {
+                "EUR": 0,
+                "USD": 0,
+                "GBP": 2500,
+                "CHF": 0,
+                "AED": 0,
+                "AUD": 0
+            }
+        },
+        {
+            "id": 3,
+            "login": "login3",
+            "password": "haslo3",
+            "accountNumber": "3333",
+            "movements": [
+                100,
+                200,
+                550,
+                120,
+                1000
+            ],
+            "loan": 0,
+            "currencies": {
+                "EUR": 0,
+                "USD": 0,
+                "GBP": 0,
+                "CHF": 0,
+                "AED": 0,
+                "AUD": 0
+            }
+        }
+    ],
+    "cards": [
+        {
+            "id": 1,
+            "cardNumber": 3456123567892051,
+            "date": "03/24",
+            "accountId": 1
+        },
+        {
+            "id": 2,
+            "cardNumber": 3925069482611613,
+            "date": "08/26",
+            "accountId": 2
+        },
+        {
+            "id": 3,
+            "cardNumber": 3629200578492816,
+            "date": "02/28",
+            "accountId": 2
+        }
+    ]
 }

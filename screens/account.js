@@ -4,7 +4,7 @@ import AccountsContext from '../components/accountsContext';
 import { AccSensor } from '../components/accSensor';
 import { bgColor, textColor } from '../styles/styles';
 
-export default Login = ({ navigation }) => {
+export default Account = ({ navigation }) => {
     const { accountBalance, activeAccount } = useContext(AccountsContext);
 
     const goToPaymentHistory = () => navigation.navigate('PaymentHistory');

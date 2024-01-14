@@ -51,7 +51,7 @@ export default StackNavigation = () => {
                 title: 'Karty',
             }} />
             <Stack.Screen name='Currencies' component={Currencies} options={{
-                title: 'Karty',
+                title: 'Waluty',
             }} />
         </Stack.Navigator>
     );
